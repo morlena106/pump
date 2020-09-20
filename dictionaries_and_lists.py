@@ -38,10 +38,12 @@ print(f"пароль: {user['account']['password']}")
 # part3
 
 num = int(input('Введите номер пользователя, которого нужно переместить в конец: '))
-print(user_list[num - 1])
+print('Список до изменения')
 print(user_list)
+print(f"Юзер с именем {user_list[num - 1]['name']} перемещен в конец")
 extra_user = user_list.pop(num - 1)
 user_list.append(extra_user)
+print('Список после изменения')
 print(user_list)
 
 # part4
