@@ -1,1 +1,2 @@
-print('meow')
+a = ''
+print(a[0])
