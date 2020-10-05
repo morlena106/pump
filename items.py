@@ -30,6 +30,7 @@ log = [{'user': user_list[0], 'purchases': [item_list[0], item_list[1], item_lis
 #     'quantity': количество проданных товаров
 # }
 
+# создаем словарь, ключами которого будут названия купленных товаром, значениями - количество
 popular_items = {}
 
 # Обходим все записи из списка log
@@ -41,6 +42,7 @@ for record in log:
         # Получаем название купленного товара
         purchase_title = item['title']
 
+        # если в словаре нет такого ключа, добавляем его, в противном случае увеличиваем значение соотвественного элемента на 1
         if purchase_title not in popular_items.keys():
             popular_items[purchase_title] = 1
         else:
