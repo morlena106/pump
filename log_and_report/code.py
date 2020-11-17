@@ -209,4 +209,4 @@ sheet['B33'] = less_common_men_product
 sheet['B34'] = less_common_women_product
 
 # Сохраняем файл с отчетом
-wb.save('C:\\Users\\Elena\\Desktop\\pumpskill\\log_and_report\\report.xlsx')
+wb.save('report.xlsx')
