@@ -2,7 +2,7 @@ import pandas as pd
 import collections
 import openpyxl
 
-# открываем экселевский файл фурнал логов
+# открываем экселевский файл журнал логов
 excel_data = pd.read_excel(
     'logs.xlsx', sheet_name='log')
 
