@@ -1,3 +1,4 @@
+# создаем базовый класс с проверкой title на заполненность
 class BaseClass():
 
     def __init__(self, title):
@@ -69,8 +70,7 @@ products = [dough_ingredient, tomato_ingredient, cheese_ingredient]
 
 # Из ингредиентов создаем пиццу
 margarita = Pizza('Маргарита', products)
-# Выводим экземпляр пиццы
-# print(pizza_margarita)
 
+# Выводим экземпляр пиццы
 print(margarita.title + ' ( ' + str(margarita.get_kkal) +
       'kkal ) - ' + str(margarita.get_cost) + ' руб')
