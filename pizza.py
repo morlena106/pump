@@ -54,4 +54,4 @@ margarita = Pizza('Маргарита', products)
 # Выводим экземпляр пиццы
 # print(pizza_margarita)
 
-print(margarita.get_kkal())
+print(margarita.get_cost())
