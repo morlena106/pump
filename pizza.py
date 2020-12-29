@@ -1,6 +1,20 @@
-class Product:
+class BaseClass():
+
+    def __init__(self, title):
+        if BaseClass.check_title(title):
+            self.title = title
+        else:
+            raise ValueError
+
+    @staticmethod
+    def check_title(title):
+        return len(title) > 0
+
+
+class Product(BaseClass):
+
     def __init__(self, title, calorific, cost):
-        self.title = title
+        BaseClass.__init__(self, title)
         self.calorific = calorific
         self.cost = cost
 
@@ -11,27 +25,31 @@ class Ingredient:
         self.product = product
         self.weight = weight
 
+    @property
     def get_kkal(self):
         return self.weight / 100 * self.product.calorific
 
+    @property
     def get_cost(self):
         return self.weight / 100 * self.product.cost
 
 
-class Pizza:
+class Pizza(BaseClass):
 
     def __init__(self, title, ingredients):
-        self.title = title
+        BaseClass.__init__(self, title)
         self.ingredients = ingredients
         self.sum_kkal = 0
         self.sum_cost = 0
         for prod in self.ingredients:
-            self.sum_kkal += prod.get_kkal()
-            self.sum_cost += prod.get_cost()
+            self.sum_kkal += prod.get_kkal
+            self.sum_cost += prod.get_cost
 
+    @property
     def get_cost(self):
         return self.sum_cost
 
+    @property
     def get_kkal(self):
         return self.sum_kkal
 
@@ -54,5 +72,5 @@ margarita = Pizza('Маргарита', products)
 # Выводим экземпляр пиццы
 # print(pizza_margarita)
 
-print(margarita.title + ' ( ' + str(margarita.get_kkal()) +
-      'kkal ) - ' + str(margarita.get_cost()) + ' руб')
+print(margarita.title + ' ( ' + str(margarita.get_kkal) +
+      'kkal ) - ' + str(margarita.get_cost) + ' руб')
